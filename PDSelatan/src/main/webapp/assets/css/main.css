@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin:0px;
+	padding:0px;
+}
+.global-container{
+	width:1024px;
+	margin:auto;
+}
+.body-container{
+	width:100%;
+	display:block;
+	clear:left;	
+}
+.footer-copyrights{
+	display:block;
+}

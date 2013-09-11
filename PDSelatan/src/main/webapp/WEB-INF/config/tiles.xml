@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition" template="/WEB-INF/component/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/component/header.jsp" />
+        <put-attribute name="topmenu" value="/WEB-INF/component/topmenu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/component/footer.jsp" />
+    </definition>
+ 
+    <definition name="index" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    </definition>
+    <definition name="test" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/test.jsp" />
+    </definition>
+    
+    <definition name="general/login.jsp" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/general/login.jsp" />
+    </definition>
+    
+    <!-- START LAPORAN PAGES -->
+    <definition name="laporan.laporan-bank" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-bank.jsp" />
+    </definition>
+    <definition name="laporan.laporan-do" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-do.jsp" />
+    </definition>
+    <definition name="laporan.laporan-faktur-belum-lunas" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-faktur-belum-lunas.jsp" />
+    </definition>
+    <definition name="laporan.laporan-giro-belum-cair" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-giro-belum-cair.jsp" />
+    </definition>
+    <definition name="laporan.laporan-hutang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-hutang.jsp" />
+    </definition>
+    <definition name="laporan.laporan-omset-tahunan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-omset-tahunan.jsp" />
+    </definition>
+    <definition name="laporan.laporan-omset" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-omset.jsp" />
+    </definition>
+    <definition name="laporan.laporan-penjualan-bk" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-penjualan-bk.jsp" />
+    </definition>
+    <definition name="laporan.laporan-penjualan-full" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-penjualan-full.jsp" />
+    </definition>
+    <definition name="laporan.laporan-penjualan-sekunder" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-penjualan-sekunder.jsp" />
+    </definition>
+    <definition name="laporan.laporan-penjualan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-penjualan.jsp" />
+    </definition>
+    <definition name="laporan.laporan-piutang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-piutang.jsp" />
+    </definition>
+    <definition name="laporan.laporan-retur-belum-dibayar" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-retur-belum-dibayar.jsp" />
+    </definition>
+    <definition name="laporan.laporan-transfer" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/laporan/laporan-transfer.jsp" />
+    </definition>
+    <!--  END LAPORAN PAGES -->
+    
+    <!--  START MASTER PAGES -->
+    <definition name="master.bank" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/bank.jsp" />
+    </definition>
+    <definition name="master.barang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/barang.jsp" />
+    </definition>
+    <definition name="master.customer" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/customer.jsp" />
+    </definition>
+    <definition name="master.pegawai" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/pegawai.jsp" />
+    </definition>
+    <definition name="master.sales" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/sales.jsp" />
+    </definition>
+    <definition name="master.supplier" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/supplier.jsp" />
+    </definition>
+    <!--  END MASTER PAGES -->
+    
+    <!--  START OPERASIONAL PAGES -->
+    <definition name="operasional.data-kas-kecil" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/operasional/data-kas-kecil.jsp" />
+    </definition>
+    <definition name="operasional.tambah-kas-kecil" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/operasional/tambah-kas-kecil.jsp" />
+    </definition>
+    <definition name="operasional.data-operational" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/operasional/data-operational.jsp" />
+    </definition>
+    <definition name="operasional.tambah-operational" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/operasional/tambah-operational.jsp" />
+    </definition>
+    <!--  END OPERASIONAL PAGES -->
+    
+    <!--  START PEMBAYARAN PAGES -->
+    <definition name="pembayaran.data-pembelian" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembayaran/data-pembelian.jsp" />
+    </definition>
+    <definition name="pembayaran.data-penjualan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembayaran/data-penjualan.jsp" />
+    </definition>
+    <definition name="pembayaran.pembelian" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembayaran/pembelian.jsp" />
+    </definition>
+    <definition name="pembayaran.penjualan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembayaran/penjualan.jsp" />
+    </definition>
+    <!--  END PEMBAYARAN PAGES -->
+    
+    <!--  START PEMBELIAN PAGES -->
+    <definition name="pembelian.laporan-pembelian-item" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembelian/laporan-pembelian-item.jsp" />
+    </definition>
+    <definition name="pembelian.laporan-pembelian" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembelian/laporan-pembelian.jsp" />
+    </definition>
+    <definition name="pembelian.pembelian-dari-do" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembelian/pembelian-dari-do.jsp" />
+    </definition>
+    <definition name="pembelian.pembelian-langsung" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pembelian/pembelian-langsung.jsp" />
+    </definition>
+    <!--  END PEMBELIAN PAGES -->
+    
+    <!--  START PENAGIHAN PAGES -->
+    <definition name="penagihan.penagihan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penagihan/penagihan.jsp" />
+    </definition>
+    <definition name="penagihan.tambah-data" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penagihan/tambah-data.jsp" />
+    </definition>
+    <!--  END PENAGIHAN PAGES -->
+    
+    <!--  START PENJUALAN PAGES -->
+    <definition name="penjualan.cat" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penjualan/cat.jsp" />
+    </definition>
+    <definition name="penjualan.data-penjualan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penjualan/data-penjualan.jsp" />
+    </definition>
+    <definition name="penjualan.keramik" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penjualan/keramik.jsp" />
+    </definition>
+    <definition name="penjualan.ppn" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penjualan/ppn.jsp" />
+    </definition>
+    <definition name="penjualan.sekunder" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/penjualan/sekunder.jsp" />
+    </definition>
+    <!--  END PENJUALAN PAGES -->
+    
+    <!--  START RETUR PAGES -->
+    <definition name="retur.retur" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/retur/retur.jsp" />
+    </definition>
+    <!--  END RETUR PAGES -->
+    
+    <!--  START TRANSFER BARANG PAGES -->
+    <definition name="transfer-barang.transfer-barang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/transfer-barang/transfer-barang.jsp" />
+    </definition>
+    <!--  END TRANSFER BARANG PAGES -->
+    
+</tiles-definitions>
