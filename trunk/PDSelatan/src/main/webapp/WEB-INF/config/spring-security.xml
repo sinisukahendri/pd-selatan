@@ -5,8 +5,7 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-	<http auto-config="true" use-expressions="true"
-		access-denied-page="/denied">		
+	<http auto-config="true" use-expressions="true" access-denied-page="/denied">		
 		<intercept-url pattern="/finance/admin" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/finance/common" access="hasRole('ROLE_USER')" />
 
