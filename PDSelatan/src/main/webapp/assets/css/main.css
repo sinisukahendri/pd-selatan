@@ -12,6 +12,7 @@
 	display:block;
 	clear:left;	
 }
-.footer-copyrights{
+.footer{
 	display:block;
+	clear:both;
 }

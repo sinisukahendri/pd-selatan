@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,6 +9,12 @@
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/basic-navigation.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/jquery.dataTables.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/jquery.dataTables_themeroller.css" />
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery.dataTables.js"></script>
+		
 
 </head>
 <body>
@@ -18,7 +25,9 @@
     <div class="body-container">
 		<tiles:insertAttribute name="body" />
 	</div>
-    <tiles:insertAttribute name="footer" />
+	<div class="footer">
+    	<tiles:insertAttribute name="footer" />
+	</div>
 </div>
 </body>
 </html>
