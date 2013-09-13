@@ -1,12 +1,8 @@
-<h1>BANK</h1>
-<hr/>
+<h1>KATEGORI BARANG</h1>
 <form>
-<div class="filter">
-	Nama Bank
-	<input type ="text"/>
-	Submit
-	Reset
-	<a href="${pageContext.request.contextPath}/master/tambah-bank">Tambah data</a>
+<hr/>
+<div class="filter" style="border:solid thin;">
+	Nama Kategori	:
 </div>
 <br/>
 <div class="result">
@@ -15,28 +11,24 @@
 			<tr>
 				<th></th>
 				<th></th>
-				<th>Bank</th>
-				<th>Keterangan</th>
+				<th>Nama</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>Edit</td>
+				<td>edit</td>
 				<td>Del</td>
-				<td>BCA</td>
-				<td></td>
+				<td>Accessories 1</td>
 			</tr>
 			<tr>
-				<td>Edit</td>
+				<td>edit</td>
 				<td>Del</td>
-				<td>BNI</td>
-				<td></td>
+				<td>Accessories 2</td>
 			</tr>
 			<tr>
-				<td>Edit</td>
+				<td>edit</td>
 				<td>Del</td>
-				<td>Mandiri</td>
-				<td></td>
+				<td>Accessories 3</td>
 			</tr>
 		</tbody>
 	</table>
