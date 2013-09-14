@@ -1,7 +1,7 @@
 <h2>laporan-pembelian-item</h2>
 <form>
 <div class="filter">
-	Tanggal
+	Tanggal : <input type="text" class="datepicker" />
 </div>
 <hr/>
 <br/>
@@ -52,5 +52,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#result-table').dataTable();
+	 $( ".datepicker" ).datepicker();
 } );
 </script>

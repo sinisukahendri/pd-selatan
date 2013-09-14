@@ -11,9 +11,11 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/basic-navigation.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/jquery.dataTables.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/jquery.dataTables_themeroller.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-ui-1.10.3.custom.js"></script>
 		
 
 </head>
