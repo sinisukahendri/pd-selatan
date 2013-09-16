@@ -3,6 +3,9 @@
 	margin:0px;
 	padding:0px;
 }
+body, select{
+	font: normal 14px Arial, sans-serif;
+}
 .global-container{
 	width:1024px;
 	margin:auto;
@@ -12,6 +15,14 @@
 	display:block;
 	clear:left;	
 }
+.customer-name{
+	font-weight: bold;
+	display: block;
+}
+.customer-items{
+	display: block;
+}
+
 .footer{
 	display:block;
 	clear:both;

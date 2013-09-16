@@ -20,8 +20,6 @@ public class MainController {
 		mav.setViewName(INDEX_PAGE);
 		mav.addObject("test", "TESTING 2");
 
-		logger.error("Main Controller - index2");
-		logger.error("Main Controller - index3");
 		return mav;
 	}
 
