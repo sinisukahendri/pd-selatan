@@ -1,9 +1,9 @@
-<h1>Stock BARANG</h1>
+<h1>STOCK BARANG</h1>
 <hr/>
 <br/>
 <form>
 <div class="filter">
-	Kategori	:
+	Kategori	: <select><option>Aquaproof</option></select> Submit Cancel
 </div>
 <br/>
 <h2>Daftar Stock Barang</h2>

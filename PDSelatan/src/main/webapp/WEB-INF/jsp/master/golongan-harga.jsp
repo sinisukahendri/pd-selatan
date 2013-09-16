@@ -3,7 +3,8 @@
 <br/>
 <form>
 <div class="filter">
-	Kategori	:
+	Kategori	:<select><option>Aquaproof</option></select>Submit Cancel
+	<a href="${pageContext.request.contextPath}/master/tambah-kategori">Tambah Golongan</a>
 </div>
 <br/>
 <h2>Golongan Harga Aquaproof</h2>

@@ -9,11 +9,11 @@
 	</tr>
 	<tr>
 		<td>Kategori	:</td>
-		<td><input/></td>
+		<td><select><option></option></select></td>
 	</tr>
 	<tr>
 		<td></td>
-		<td>Some Buttons Here</td>
+		<td>Submit Cancel</td>
 	</tr>
 	</table>
 </div>
