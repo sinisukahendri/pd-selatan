@@ -13,7 +13,7 @@
 	</tr>
 	<tr>
 		<td></td>
-		<td>Some Buttons Here</td>
+		<td>Submit Cancel</td>
 	</tr>
 	</table>
 </div>

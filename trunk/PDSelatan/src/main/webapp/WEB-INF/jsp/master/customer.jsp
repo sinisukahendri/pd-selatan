@@ -2,7 +2,9 @@
 <form>
 <hr/>
 <div class="filter">
-	Nama Customer
+	Nama Customer : <input type="text"/> 
+	Kategori : <select><option>1</option><option>2</option></select> Submit Cancel 
+	<a href="${pageContext.request.contextPath}/master/tambah-customer">Tambah Customer</a>
 </div>
 <br />
 <div class="result">

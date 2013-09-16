@@ -1,10 +1,10 @@
-<h1>TAMBAH KATEGORI BARANG</h1>
+<h1>TAMBAH GOLONGAN HARGA</h1>
 <form>
 <hr/>
 <div class="filter" style="border:solid thin;">
 	<table>
 	<tr>
-		<td>Nama Kategori	:</td>
+		<td>Nama Golongan	:</td>
 		<td><input/></td>
 	</tr>
 	<tr>

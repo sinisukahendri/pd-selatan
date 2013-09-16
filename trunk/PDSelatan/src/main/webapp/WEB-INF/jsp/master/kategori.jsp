@@ -2,7 +2,8 @@
 <form>
 <hr/>
 <div class="filter" style="border:solid thin;">
-	Nama Kategori	:
+	Nama Kategori	:<input type="text"/> Submit Cancel
+	<a href="${pageContext.request.contextPath}/master/tambah-kategori">Tambah Kategori</a>
 </div>
 <br/>
 <div class="result">

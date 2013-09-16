@@ -4,12 +4,13 @@
 <br/>
 <div class="subMenuBarang">
 	<a href="${pageContext.request.contextPath}/master/kategori">Kategori Barang</a>
-	<a href="${pageContext.request.contextPath}/master/data-barang">Edit Barang</a>
+	<a href="${pageContext.request.contextPath}/master/harga-barang">Edit Harga</a>
 	<a href="${pageContext.request.contextPath}/master/stock-barang">Edit Stock Awal</a>
 </div>
 	<br/>
 <div class="filter" style="border:solid thin;">
-	Kategori	:
+	Kategori	: <select><option>Aquaproof</option></select> Nama Item	: <input type="text"/> Submit Cancel
+	<a href="${pageContext.request.contextPath}/master/data-barang">Tambah Barang</a> 
 </div>
 <br/>
 <div class="result">
