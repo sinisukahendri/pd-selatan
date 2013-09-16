@@ -89,25 +89,78 @@
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/bank.jsp" />
     </definition>
+    <definition name="master.tambah-bank" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-bank.jsp" />
+    </definition>
+    
     <definition name="master.barang" extends="base.definition">
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/barang.jsp" />
     </definition>
+    <definition name="master.data-barang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/data-barang.jsp" />
+    </definition>
+    <definition name="master.stock-barang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/stock-barang.jsp" />
+    </definition>
+    <definition name="master.harga-barang" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/harga-barang.jsp" />
+    </definition>
+    <definition name="master.golongan-harga" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/golongan-harga.jsp" />
+    </definition>
+    <definition name="master.tambah-golongan" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-golongan.jsp" />
+    </definition>
+    <definition name="master.kategori" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/kategori.jsp" />
+    </definition>
+    <definition name="master.tambah-kategori" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-kategori.jsp" />
+    </definition>
+    
     <definition name="master.customer" extends="base.definition">
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/customer.jsp" />
     </definition>
+    <definition name="master.tambah-customer" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-customer.jsp" />
+    </definition>
+    
     <definition name="master.pegawai" extends="base.definition">
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/pegawai.jsp" />
     </definition>
+    <definition name="master.tambah-pegawai" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-pegawai.jsp" />
+    </definition>
+    
     <definition name="master.sales" extends="base.definition">
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/sales.jsp" />
     </definition>
+    <definition name="master.tambah-sales" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-sales.jsp" />
+    </definition>
+    
     <definition name="master.supplier" extends="base.definition">
         <put-attribute name="title" value="PD Selatan" />
         <put-attribute name="body" value="/WEB-INF/jsp/master/supplier.jsp" />
+    </definition>
+    <definition name="master.tambah-supplier" extends="base.definition">
+        <put-attribute name="title" value="PD Selatan" />
+        <put-attribute name="body" value="/WEB-INF/jsp/master/tambah-supplier.jsp" />
     </definition>
     <!--  END MASTER PAGES -->
     
