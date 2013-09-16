@@ -1,4 +1,4 @@
-<h1>laporan-retur-belum-dibayar</h1>
+<h1>DETAIL PIUTANG</h1>
 <hr>
 <div class="result">
 	<table id="result-table">
@@ -6,9 +6,12 @@
 			<tr>
 				<th></th>
 				<th>Tanggal</th>
-				<th>invoice</th>
-				<th>Supplier</th>
-				<th>SubTotal</th>
+				<th>Faktur</th>
+				<th>Customer</th>
+				<th>Note</th>
+				<th>Total</th>
+				<th>Bayar</th>
+				<th>Sisa</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,13 +19,25 @@
 				<td>01 September 2013</td>
 				<td>FK13414</td>
 				<td>OTTo</td>
+				<td>note 1</td>
 				<td>10000000</td>
+				<td>0</td>
+				<td>10000000</td>
+			</tr>
+			<tr>
+				<td>02 September 2013</td>
+				<td>FK16414</td>
+				<td>OTTo</td>
+				<td>note 1</td>
+				<td>1000000</td>
+				<td>0</td>
+				<td>1000000</td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="3">Total :</td>
-				<td>10000000</td>
+				<td colspan="6">Total Piutang</td>
+				<td>1100000</td>
 			</tr>
 		</tfoot>
 	</table>
