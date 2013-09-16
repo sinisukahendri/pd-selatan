@@ -1,34 +1,29 @@
-<h1>LAPORAN HUTANG</h1>
+<h1>DETAIL HUTANG</h1>
 <hr/>
-div class="filter">
-		Nama Supplier :<input type="text"/>Submit Reset
-	</div>
-	<br />
-	<div class="result">
+<div class="result">
 		<table id="result-table">
 			<thead>
 				<tr>
+					<th>Tanggal</th>
+					<th>Faktur</th>
 					<th>Supplier</th>
-					<th>Hutang</th>
+					<th>Total</th>
+					<th>Bayar</th>
+					<th>Sisa</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>Supplier 1</td>
-					<td>0</td>
-				</tr>
-				<tr>
+					<td>18 Agustus 2013</td>
+					<td>F171240</td>
 					<td>Otto</td>
 					<td>1000000</td>
-				</tr>
-				<tr>
-					<td>Supplier 2</td>
 					<td>0</td>
+					<td>1000000</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-</form>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#result-table').dataTable();
