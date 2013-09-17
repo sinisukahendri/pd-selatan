@@ -34,7 +34,7 @@ public class KategoriDaoImpl extends AbstractDaoImpl<Kategori,String> implements
 
 	public List<Kategori> findKategoriByName(String kategoriName, MatchMode mode) {
 		// TODO Auto-generated method stub
-		return findByCriteria(Restrictions.like("kategoriname", kategoriName, mode));
+		return findByCriteria(Restrictions.like("kategoriName", kategoriName, mode));
 	}
 
 }
