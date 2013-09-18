@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.criterion.MatchMode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pdselatan.model.Bank;
+import com.pdselatan.service.BankService;
 import com.pdselatan.service.impl.BankServiceImpl;
 
 @Controller
@@ -127,8 +129,8 @@ public class MasterController {
 		return mav;
 	}
 	
-	
-	BankServiceImpl bankService = new BankServiceImpl();
+	@Autowired
+	private BankService bankService;
 //method2
 	public void addBank(Bank bank){
 		bankService.saveOrUpdateBank(bank);
@@ -144,7 +146,7 @@ public class MasterController {
 	}
 	
 	public List<Bank> getAllBank(){
-		return bankService.findBanksByName(" ",MatchMode.ANYWHERE);
+		return bankService.findBanksByName("MAP/SAP",MatchMode.ANYWHERE);
 	}
 	
 	public List<Bank> getBanksByBame(String bankName){
