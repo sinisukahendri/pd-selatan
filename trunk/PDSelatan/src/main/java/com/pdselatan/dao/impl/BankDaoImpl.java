@@ -25,7 +25,7 @@ public class BankDaoImpl extends AbstractDaoImpl<Bank,String> implements BankDao
     }
 
     public List<Bank> findBanksByName(String bankName, MatchMode mode) {    	
-        return findByCriteria(Restrictions.like("bank_name", bankName, mode));
+        return findByCriteria(Restrictions.like("bankName", bankName, mode));
     }        
     
     public Bank findBankById(String bankId) {
