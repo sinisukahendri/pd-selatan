@@ -1,15 +1,22 @@
 package com.pdselatan.controller;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
+import org.hibernate.criterion.MatchMode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.pdselatan.model.Bank;
+import com.pdselatan.service.impl.BankServiceImpl;
 
 @Controller
 @RequestMapping(value= "/master")
 public class MasterController {
     
-protected static Logger logger = Logger.getLogger(MasterController.class);
+	protected static Logger logger = Logger.getLogger(MasterController.class);
+//mapping
 	private static final String BANK = "master.bank";
 	private static final String TAMBAH_BANK = "master.tambah-bank";
 	private static final String BARANG = "master.barang";
@@ -118,5 +125,29 @@ protected static Logger logger = Logger.getLogger(MasterController.class);
 	public ModelAndView tambah_supplier(ModelAndView mav){
 		mav.setViewName(TAMBAH_SUPPLIER);						
 		return mav;
+	}
+	
+	
+	BankServiceImpl bankService = new BankServiceImpl();
+//method2
+	public void addBank(Bank bank){
+		bankService.saveOrUpdateBank(bank);
+	}
+	
+	public void updateBank(Bank bank){
+		bankService.saveOrUpdateBank(bank);
+	}
+	
+	public void deleteBank(String bankId){
+		Bank bank = bankService.findBankById(bankId);
+		bankService.deleteBank(bank);
+	}
+	
+	public List<Bank> getAllBank(){
+		return bankService.findBanksByName(" ",MatchMode.ANYWHERE);
+	}
+	
+	public List<Bank> getBanksByBame(String bankName){
+		return bankService.findBanksByName(bankName,MatchMode.ANYWHERE);
 	}
 }
