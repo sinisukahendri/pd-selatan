@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pdselatan.dao.impl.BankDaoImpl;
+import com.pdselatan.dao.BankDao;
 import com.pdselatan.model.Bank;
 import com.pdselatan.service.BankService;
 
@@ -17,7 +17,7 @@ import com.pdselatan.service.BankService;
 public class BankServiceImpl implements BankService {
 
 	@Autowired
-	private BankDaoImpl bankDao;
+	private BankDao bankDao;
 	Logger logger = Logger.getLogger(BankServiceImpl.class);
 	
 	@Transactional(readOnly = false)
@@ -32,11 +32,13 @@ public class BankServiceImpl implements BankService {
 		bankDao.deleteBank(bank);
 	}
 
+	@Transactional(readOnly = true)
 	public Bank findBankById(String bankId) {
 		// TODO Auto-generated method stub
 		return bankDao.findBankById(bankId);
 	}
 
+	@Transactional(readOnly = true)
 	public List<Bank> findBanksByName(String bankName,MatchMode mode) {
 		// TODO Auto-generated method stub
 		logger.error(bankDao);
