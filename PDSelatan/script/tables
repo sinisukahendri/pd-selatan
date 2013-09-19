@@ -1,0 +1,55 @@
+
+CREATE TABLE `users` (
+  `USER_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_NAME` varchar(50) NOT NULL,
+  `PASSWORD` varchar(50) NOT NULL,
+  `ENABLED` int(1) DEFAULT NULL,
+  `CREATED_DATE` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `CREATED_BY` varchar(50) DEFAULT NULL,
+  `EMPLOYEE_NAME` varchar(20) DEFAULT NULL,
+  `EMPLOYEE_ADDRESS` varchar(100) DEFAULT NULL,
+  `EMPLOYEE_PHONE` varchar(20) DEFAULT NULL,
+  `GROUP_ID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `user_role` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) DEFAULT NULL,
+  `ROLE_ID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FK01` (`USER_ID`),
+  KEY `FK02` (`ROLE_ID`),
+  CONSTRAINT `FK01` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`USER_ID`),
+  CONSTRAINT `FK02` FOREIGN KEY (`ROLE_ID`) REFERENCES `roles` (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `roles` (
+  `ROLE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ROLE_NAME` varchar(20) NOT NULL,
+  PRIMARY KEY (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+
+-- INITAL DATA --
+insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (1,'arga','c28147ca62523c7582790a7d64ee311c',1,'2013-09-19 14:03:57','INIT','ARGA HASRIL','BEKASI','0817113289',1);
+insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (2,'rein','84aad32ab0ca8406f8ba4bd30e8be2e0',1,'2013-09-19 14:03:57','INIT','REIN MARTHA','BANDUNG','0817113289',1);
+insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (3,'gian','56ea9c664e8c9f1ad611cf8e5f1bb41c',1,'2013-09-19 14:03:57','INIT','GIAN DASUKI','BANDUNG','0817113289',1);
+
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (1,1,1);
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (3,1,2);
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (2,2,1);
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (4,2,2);
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (5,3,1);
+insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (5,3,2);
+
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (1,'ROLE_ADMIN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (2,'ROLE_MASTER');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (3,'ROLE_PEMBELIAN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (4,'ROLE_PENJUALAN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (5,'ROLE_TRANSFER');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (6,'ROLE_PEMBAYARAN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (7,'ROLE_RETUR');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (8,'ROLE_PENAGIHAN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (9,'ROLE_LAPORAN');
+insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (10,'ROLE_OPERASIONAL');
