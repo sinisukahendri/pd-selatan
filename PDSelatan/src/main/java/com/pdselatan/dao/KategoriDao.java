@@ -10,5 +10,5 @@ public interface KategoriDao extends AbstractDao<Kategori, String>{
 	public void saveKategori(Kategori kategori);
 	public void deleteKategori(Kategori kategori);
     public Kategori findKategoriById(String kategoriId);
-    public List<Kategori> findKategoriByName(String kategoriName, MatchMode mode);
+    public List<Kategori> findKategoriesByName(String kategoriName, MatchMode mode);
 }

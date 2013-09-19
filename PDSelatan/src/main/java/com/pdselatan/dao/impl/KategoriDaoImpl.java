@@ -32,7 +32,7 @@ public class KategoriDaoImpl extends AbstractDaoImpl<Kategori,String> implements
 		return findById(kategoriId);
 	}
 
-	public List<Kategori> findKategoriByName(String kategoriName, MatchMode mode) {
+	public List<Kategori> findKategoriesByName(String kategoriName, MatchMode mode) {
 		// TODO Auto-generated method stub
 		return findByCriteria(Restrictions.like("kategoriName", kategoriName, mode));
 	}

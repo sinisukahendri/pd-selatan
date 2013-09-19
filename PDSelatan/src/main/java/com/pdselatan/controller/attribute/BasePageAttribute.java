@@ -4,7 +4,7 @@ public class BasePageAttribute {
 
 	private String title;
 	private String pageId;
-	
+	private String filter;
 	
 	public String getTitle() {
 		return title;
@@ -17,6 +17,12 @@ public class BasePageAttribute {
 	}
 	public void setPageId(String pageId) {
 		this.pageId = pageId;
+	}
+	public String getFilter() {
+		return filter;
+	}
+	public void setFilter(String filter) {
+		this.filter = filter;
 	}
 	
 	
