@@ -44,4 +44,17 @@ public abstract class AbstractDaoImpl<E, I extends Serializable> implements Abst
         criteria.add(criterion);
         return criteria.list();
     }
+    
+
+    public List<E> findByCriterias(List<Criterion> criterions) {
+        Criteria criteria = getCurrentSession().createCriteria(entityClass);
+        for(Criterion criterion : criterions){
+            criteria.add(criterion);
+        }
+        return criteria.list();
+    }
+    
+    public List<E> findByHQL(StringBuilder hql){
+    	return getCurrentSession().createQuery(hql.toString()).list();
+    }
 }
