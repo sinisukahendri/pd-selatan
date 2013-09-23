@@ -22,10 +22,7 @@ public class MasterController {
 	private static final String TAMBAH_CUSTOMER = "master.tambah-customer";
 	private static final String PEGAWAI = "master.pegawai";
 	private static final String TAMBAH_PEGAWAI = "master.tambah-pegawai";
-	private static final String SALES = "master.sales";
-	private static final String TAMBAH_SALES = "master.tambah-sales";
-	private static final String SUPPLIER = "master.supplier";
-	private static final String TAMBAH_SUPPLIER = "master.tambah-pegawai";
+	
 	
 		
 	@RequestMapping("data-barang")
@@ -79,24 +76,6 @@ public class MasterController {
 		mav.setViewName(TAMBAH_PEGAWAI);						
 		return mav;
 	}
-	@RequestMapping("sales")
-	public ModelAndView sales(ModelAndView mav){
-		mav.setViewName(SALES);						
-		return mav;
-	}	
-	@RequestMapping("tambah-sales")
-	public ModelAndView tambahSales(ModelAndView mav){
-		mav.setViewName(TAMBAH_SALES);						
-		return mav;
-	}
-	@RequestMapping("supplier")
-	public ModelAndView supplier(ModelAndView mav){
-		mav.setViewName(SUPPLIER);						
-		return mav;
-	}	
-	@RequestMapping("tambah-supplier")
-	public ModelAndView tambahSupplier(ModelAndView mav){
-		mav.setViewName(TAMBAH_SUPPLIER);						
-		return mav;
-	}
+	
+	
 }
