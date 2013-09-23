@@ -1,11 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <h1>DATA Salesman</h1>
-<hr/>
-<form>
+<hr />
 <div class="filter">
-	Nama Salesman	: <input type="text"/> Submit Reset 
+	<form action="sales">
+		Nama Salesman : <input type="text" name="filter" /> 
+		<input type="submit" value="Submit" /> Reset
+	</form>
 	<a href="${pageContext.request.contextPath}/master/tambah-sales">Tambah Salesman</a>
 </div>
-<br/>
+<br />
 <div class="result">
 	<table id="result-table">
 		<thead>
@@ -17,19 +20,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>edit</td>
-				<td>Del</td>
-				<td>Sales 1</td>
-				<td>-</td>
-			</tr>
+			<c:forEach items="${form.salesmans}" var="salesman">
+				<tr>
+					<td>edit</td>
+					<td>
+						<form action="delete-sales">
+							<input type="hidden" value="${salesman.salesmanId}"
+								name="deletedSalesman" /> 
+							<input type="submit" value="Del" />
+						</form>
+					</td>
+					<td>${salesman.salesmanName}</td>
+					<td>${salesman.modifier.empName}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-	</div>
-</form>
+</div>
 
 <script type="text/javascript">
-$(document).ready(function() {
-	$('#result-table').dataTable();
-} );
+	$(document).ready(function() {
+		$('#result-table').dataTable();
+	});
 </script>

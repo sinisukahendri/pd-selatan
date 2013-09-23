@@ -14,17 +14,17 @@ public class Bank extends BaseObject{
 	 * 
 	 */
 	private static final long serialVersionUID = -3275645141915626773L;
-	private double bankId;
+	private Double bankId;
 	private String bankName;
 	private String bankNote;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "bank_id")
-	public double getBankId() {
+	public Double getBankId() {
 		return bankId;
 	}
-	public void setBankId(double bankId) {
+	public void setBankId(Double bankId) {
 		this.bankId = bankId;
 	}
 	
