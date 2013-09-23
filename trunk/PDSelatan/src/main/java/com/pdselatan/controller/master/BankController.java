@@ -26,11 +26,11 @@ public class BankController {
 	@RequestMapping("bank")
 	public ModelAndView bank(ModelAndView mav, BankAttribute form){
 		savedForm = new BankAttribute();
-		savedForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
-		
-		if(form.getFilter()!=null){
+		if(form.getFilter()!=null)
 			savedForm.setBanks(bankService.findBanksByName(form.getFilter(),MatchMode.ANYWHERE));
-		}
+		else
+			savedForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
+			
 		mav.addObject("form",savedForm);
 		mav.setViewName(BANK);						
 		return mav;
@@ -38,7 +38,6 @@ public class BankController {
 	
 	@RequestMapping("tambah-bank")
 	public ModelAndView tambahBank(ModelAndView mav, BankAttribute form){
-		
 		Bank savedBank = new Bank();
 		if(form.getSavedBank()!=null){
 			savedBank = form.getSavedBank();

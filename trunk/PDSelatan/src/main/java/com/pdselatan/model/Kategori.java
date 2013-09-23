@@ -16,16 +16,16 @@ public class Kategori extends BaseObject {
 	 */
 	private static final long serialVersionUID = 5538684417563789987L;
 
-	private double kategoriId;
+	private Double kategoriId;
 	private String kategoriName;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "category_id")
-	public double getKategoriId() {
+	public Double getKategoriId() {
 		return kategoriId;
 	}
-	public void setKategoriId(double kategoriId) {
+	public void setKategoriId(Double kategoriId) {
 		this.kategoriId = kategoriId;
 	}
 	

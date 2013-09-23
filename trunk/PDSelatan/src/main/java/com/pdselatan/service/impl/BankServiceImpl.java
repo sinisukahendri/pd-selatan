@@ -41,7 +41,6 @@ public class BankServiceImpl implements BankService {
 	@Transactional(readOnly = true)
 	public List<Bank> findBanksByName(String bankName,MatchMode mode) {
 		// TODO Auto-generated method stub
-		logger.error(bankDao);
 		return bankDao.findBanksByName(bankName, mode);
 	}
 }

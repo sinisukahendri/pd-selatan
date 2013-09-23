@@ -12,7 +12,7 @@
 		<thead>
 			<tr>
 				<th>Tanggal</th>
-				<th>Keteerangan</th>
+				<th>Keterangan</th>
 				<th>Nominal</th>
 				<th>Saldo</th>
 			</tr>
