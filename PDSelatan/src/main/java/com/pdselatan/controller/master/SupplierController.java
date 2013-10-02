@@ -15,7 +15,7 @@ import com.pdselatan.service.SupplierService;
 @RequestMapping(value= "/master")
 public class SupplierController {
 
-	protected static Logger logger = Logger.getLogger(BankController.class);
+	protected static Logger logger = Logger.getLogger(SupplierController.class);
 
 	private static final String SUPPLIER = "master.supplier";
 	private static final String TAMBAH_SUPPLIER = "master.tambah-supplier";
