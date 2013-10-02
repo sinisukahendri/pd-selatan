@@ -21,17 +21,17 @@ public class BankController {
 	
 	@Autowired
 	private BankService bankService;
-	private BankAttribute savedForm;
+	private BankAttribute bankForm;
 	
 	@RequestMapping("bank")
 	public ModelAndView bank(ModelAndView mav, BankAttribute form){
-		savedForm = new BankAttribute();
+		bankForm = new BankAttribute();
 		if(form.getFilter()!=null)
-			savedForm.setBanks(bankService.findBanksByName(form.getFilter(),MatchMode.ANYWHERE));
+			bankForm.setBanks(bankService.findBanksByName(form.getFilter(),MatchMode.ANYWHERE));
 		else
-			savedForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
+			bankForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
 			
-		mav.addObject("form",savedForm);
+		mav.addObject("form",bankForm);
 		mav.setViewName(BANK);						
 		return mav;
 	}
@@ -56,8 +56,8 @@ public class BankController {
 	//		bankService.deleteBank(deletedBank);
 			logger.error("Bank Deleted id:"+deletedBank.getBankId());
 		}
-		savedForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
-		mav.addObject("form",savedForm);
+		bankForm.setBanks(bankService.findBanksByName("",MatchMode.ANYWHERE));
+		mav.addObject("form",bankForm);
 		mav.setViewName(BANK);						
 		return mav;
 	}
