@@ -1,10 +1,15 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <h1>DATA CUSTOMER</h1>
-<form>
-<hr/>
+<hr />
 <div class="filter">
-	Nama Customer : <input type="text"/> 
-	Kategori : <select><option>1</option><option>2</option></select> Submit Cancel 
-	<a href="${pageContext.request.contextPath}/master/tambah-customer">Tambah Customer</a>
+	<form action="customer">
+		Nama Customer : <input type="text" / name="filter"> Kategori :
+		<select><option>1</option>
+			<option>2</option></select> 
+		<input type="submit" value="Submit" /> Cancel
+	</form>
+	<a href="${pageContext.request.contextPath}/master/tambah-customer">Tambah
+		Customer</a>
 </div>
 <br />
 <div class="result">
@@ -21,40 +26,30 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Edit</td>
-				<td>Del</td>
-				<td>Customer 1</td>
-				<td>N</td>
-				<td>jalan ...</td>
-				<td>(022) 23456789</td>
-				<td> Yerin</td>
-			</tr>
-			<tr>
-				<td>Edit</td>
-				<td>Del</td>
-				<td>Customer 2</td>
-				<td>N</td>
-				<td>jalan ...</td>
-				<td>(022) 23456789</td>
-				<td> Yerin</td>			
-			</tr>
-			<tr>
-				<td>Edit</td>
-				<td>Del</td>
-				<td>Customer 3</td>
-				<td>N</td>
-				<td>jalan ...</td>
-				<td>(022) 23456789</td>
-				<td> Yerin</td>
-			</tr>
+			<c:forEach items="${form.customers }" var="customer">
+
+				<tr>
+					<td>Edit</td>
+					<td>
+						<form action="delete-customer">
+							<input type="hidden" value="${customer.customerId }"
+								name="deletedCustomer" /> <input type="submit" value="Del" />
+						</form>
+					</td>
+					<td>${customer.customerName }</td>
+					<td>N</td>
+					<td>${customer.customerAddress1}</td>
+					<td>${customer.customerPhone}</td>
+					<td>${customer.modifier.empName}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-	</div>
-</form>
+</div>
+]
 
 <script type="text/javascript">
-$(document).ready(function() {
-	$('#result-table').dataTable();
-} );
+	$(document).ready(function() {
+		$('#result-table').dataTable();
+	});
 </script>

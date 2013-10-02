@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 
 import com.pdselatan.dao.SupplierDao;
 import com.pdselatan.model.Supplier;
 
+@Repository
 public class SupplierDaoImpl extends AbstractDaoImpl<Supplier, String> implements
 		SupplierDao {
 

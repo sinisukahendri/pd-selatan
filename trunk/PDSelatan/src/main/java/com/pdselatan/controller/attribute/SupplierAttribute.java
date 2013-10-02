@@ -9,6 +9,7 @@ public class SupplierAttribute extends BasePageAttribute{
 	private List<Supplier> suppliers;
 	private String deletedSupplier;
 	private Supplier savedSupplier;
+	
 	public List<Supplier> getSuppliers() {
 		return suppliers;
 	}

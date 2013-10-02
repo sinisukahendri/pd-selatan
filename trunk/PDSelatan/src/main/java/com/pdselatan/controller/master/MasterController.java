@@ -18,8 +18,7 @@ public class MasterController {
 	private static final String HARGA_BARANG = "master.harga-barang";
 	private static final String GOLONGAN_HARGA = "master.golongan-harga";
 	private static final String TAMBAH_GOLONGAN = "master.tambah-golongan";
-	private static final String CUSTOMER = "master.customer";
-	private static final String TAMBAH_CUSTOMER = "master.tambah-customer";
+	
 	private static final String PEGAWAI = "master.pegawai";
 	private static final String TAMBAH_PEGAWAI = "master.tambah-pegawai";
 	
@@ -55,17 +54,8 @@ public class MasterController {
 		mav.setViewName(BARANG);						
 		return mav;
 	}
+
 	
-	@RequestMapping("customer")
-	public ModelAndView customer(ModelAndView mav){
-		mav.setViewName(CUSTOMER);						
-		return mav;
-	}	
-	@RequestMapping("tambah-customer")
-	public ModelAndView tambahCustomer(ModelAndView mav){
-		mav.setViewName(TAMBAH_CUSTOMER);						
-		return mav;
-	}	
 	@RequestMapping("pegawai")
 	public ModelAndView pegawai(ModelAndView mav){
 		mav.setViewName(PEGAWAI);						
