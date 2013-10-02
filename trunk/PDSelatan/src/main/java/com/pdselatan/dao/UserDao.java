@@ -6,8 +6,8 @@ import org.hibernate.criterion.MatchMode;
 
 import com.pdselatan.model.User;
 
-public interface UserDao extends AbstractDao<User, String> {
+public interface UserDao extends AbstractDao<User, Integer> {
     public void saveUser(User user);
-    public List<User> findUsersbyName(String userName, MatchMode mode);
-    public User findUserById(String userName);
+    public List<User> findUsersbyName(String criteria, String value, MatchMode mode);
+    public User findUserById(String userId);
 }

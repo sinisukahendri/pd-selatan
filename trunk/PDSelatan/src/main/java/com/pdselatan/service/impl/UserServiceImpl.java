@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
   
 
-    public User findByUserName(String userName) {
-        return userDao.findUserById(userName);
+    public User findUserById(String userId) {
+        return userDao.findUserById(userId);
     }
 
     @Transactional(readOnly = false)
@@ -29,15 +29,15 @@ public class UserServiceImpl implements UserService{
     }
 
     @Transactional(readOnly = false)
-    public void deleteUser(String userName) {
-        User user = userDao.findById(userName);
+    public void deleteUser(String userId) {
+        User user = userDao.findUserById(userId);
         if (user != null) {
             userDao.delete(user);
         }
     }
 
-    public List<User> findUsers(String user, MatchMode mode) {
-        return userDao.findUsersbyName(user, mode);
+    public List<User> findUsers(String criteria, String value, MatchMode mode) {
+        return userDao.findUsersbyName(criteria, value, mode);
     }
     
    

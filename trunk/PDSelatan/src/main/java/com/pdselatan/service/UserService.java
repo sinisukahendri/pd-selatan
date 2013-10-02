@@ -8,8 +8,8 @@ import com.pdselatan.model.User;
 
 public interface UserService {
 
-    User findByUserName(String userName);
+    User findUserById(String userId);
     void saveUser(User user);
-    void deleteUser(String userName);
-    List<User> findUsers(String user, MatchMode mode);
+    void deleteUser(String userId);
+    List<User> findUsers(String criteria, String value, MatchMode mode);
 }

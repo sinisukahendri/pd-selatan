@@ -9,7 +9,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<mvc:annotation-driven/>
-	
+	<context:annotation-config />
+	<mvc:interceptors>
+	<bean class="org.springframework.orm.hibernate4.support.OpenSessionInViewInterceptor">
+	<property name="sessionFactory">
+	<ref local="sessionFactory"/>
+	</property>
+	</bean>
+	</mvc:interceptors>
 	<mvc:resources mapping="/assets/**" location="/assets/" />
 	
 	<context:component-scan base-package="com.pdselatan"/>
