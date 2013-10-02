@@ -52,7 +52,7 @@ public class BankController {
 		
 		Bank deletedBank = new Bank();
 		if(form.getDeletedBank()!=null){
-			deletedBank.setBankId(Double.parseDouble(form.getDeletedBank()));
+			deletedBank.setBankId(Integer.parseInt(form.getDeletedBank()));
 	//		bankService.deleteBank(deletedBank);
 			logger.error("Bank Deleted id:"+deletedBank.getBankId());
 		}

@@ -1,4 +1,322 @@
 
+CREATE TABLE `roles` (
+  `ROLE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ROLE_NAME` varchar(20) NOT NULL,
+  `ROLE_DESC` varchar(20) NOT NULL,
+  PRIMARY KEY (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tbank` (
+  `bank_id` int(11) NOT NULL AUTO_INCREMENT,
+  `bank_name` varchar(255) NOT NULL,
+  `bank_note` text NOT NULL,
+  PRIMARY KEY (`bank_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `tcash` (
+  `cash_id` double NOT NULL AUTO_INCREMENT,
+  `cash_date` date NOT NULL,
+  `cash_price` double NOT NULL,
+  `cash_note` text NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`cash_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2204 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tcollect` (
+  `collect_id` double NOT NULL AUTO_INCREMENT,
+  `collect_invoice` varchar(255) NOT NULL,
+  `collect_date` date NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`collect_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3169 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tcollect_list` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_price` double NOT NULL,
+  `list_flag` double NOT NULL,
+  `sales_id` double NOT NULL,
+  `collect_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=155749 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tcustomer` (
+  `customer_id` double NOT NULL AUTO_INCREMENT,
+  `customer_name` varchar(255) NOT NULL,
+  `customer_category` varchar(255) NOT NULL,
+  `customer_address1` varchar(255) NOT NULL,
+  `customer_address2` varchar(255) NOT NULL,
+  `customer_city` varchar(255) NOT NULL,
+  `customer_phone` varchar(255) NOT NULL,
+  `customer_npwp` varchar(255) NOT NULL,
+  `customer_contractor` varchar(255) NOT NULL,
+  `salesman_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`customer_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1230 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tdeposit` (
+  `deposit_id` double NOT NULL AUTO_INCREMENT,
+  `deposit_date` date DEFAULT NULL,
+  `deposit_number` varchar(255) NOT NULL,
+  `bank_id` double NOT NULL,
+  PRIMARY KEY (`deposit_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tdeposit_list` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `sales_id` double NOT NULL,
+  `sales_price` double NOT NULL,
+  `deposit_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tdo` (
+  `do_id` double NOT NULL AUTO_INCREMENT,
+  `do_date` date NOT NULL,
+  `do_invoice` varchar(255) NOT NULL,
+  `do_status` tinyint(1) NOT NULL,
+  `do_flag` double NOT NULL,
+  `supplier_id` double NOT NULL,
+  `sales_id` double NOT NULL,
+  PRIMARY KEY (`do_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=62388 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tdo_item` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_item` double NOT NULL,
+  `list_quantity` double NOT NULL,
+  `list_purchase_price` double NOT NULL,
+  `list_sales_price` double NOT NULL,
+  `list_discount_subtotal` double NOT NULL,
+  `list_purchase_subtotal` double NOT NULL,
+  `list_sales_subtotal` double NOT NULL,
+  `list_profit` double NOT NULL,
+  `list_status` tinyint(1) NOT NULL,
+  `do_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=157731 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tgroup` (
+  `group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`group_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `titem_category` (
+  `category_id` double NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=442 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `titem_list` (
+  `item_id` double NOT NULL AUTO_INCREMENT,
+  `item_name` varchar(255) NOT NULL,
+  `item_price_pl` varchar(255) NOT NULL,
+  `item_price_m` varchar(255) NOT NULL,
+  `item_price_r` varchar(255) NOT NULL,
+  `item_price_d` varchar(255) NOT NULL,
+  `item_price_p` varchar(255) NOT NULL,
+  `item_start_stock` double NOT NULL,
+  `item_current_stock` double NOT NULL,
+  `category_id` double NOT NULL,
+  `price_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`item_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15630 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `titem_price` (
+  `price_name` varchar(255) NOT NULL,
+  `price_pl` varchar(255) NOT NULL,
+  `price_m` varchar(255) NOT NULL,
+  `price_r` varchar(255) NOT NULL,
+  `price_d` varchar(255) NOT NULL,
+  `price_p` varchar(255) NOT NULL,
+  `category_id` double NOT NULL,
+  `price_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tlog` (
+  `log_id` double NOT NULL AUTO_INCREMENT,
+  `log_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `log_note` text NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  PRIMARY KEY (`log_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `toperational` (
+  `operational_id` double NOT NULL AUTO_INCREMENT,
+  `operational_date` timestamp NULL DEFAULT NULL,
+  `operational_price` double NOT NULL,
+  `operational_note` text NOT NULL,
+  `bank_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`operational_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3456 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tpurchase` (
+  `purchase_id` double NOT NULL AUTO_INCREMENT,
+  `purchase_date` date DEFAULT NULL,
+  `purchase_invoice` varchar(255) NOT NULL,
+  `purchase_total` double NOT NULL,
+  `purchase_discount_category` varchar(255) NOT NULL,
+  `purchase_discount_price` double NOT NULL,
+  `purchase_discount_subtotal` double NOT NULL,
+  `purchase_grand` double NOT NULL,
+  `purchase_payment` double NOT NULL,
+  `purchase_rest` double NOT NULL,
+  `purchase_note` text NOT NULL,
+  `purchase_flag` double NOT NULL,
+  `is_do` tinyint(1) NOT NULL,
+  `supplier_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`purchase_id`),
+  KEY `sales_date` (`purchase_date`)
+) ENGINE=MyISAM AUTO_INCREMENT=3673 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tpurchase_item` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_item` double NOT NULL,
+  `list_quantity` double NOT NULL,
+  `list_quantity_all` double NOT NULL,
+  `list_price` double NOT NULL,
+  `list_discount_category` varchar(255) NOT NULL,
+  `list_discount_price` double NOT NULL,
+  `list_discount_subtotal` double NOT NULL,
+  `list_subtotal` double NOT NULL,
+  `list_flag` double NOT NULL,
+  `purchase_id` double NOT NULL,
+  `do_list_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=31457 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tpurchase_payment` (
+  `payment_id` double NOT NULL AUTO_INCREMENT,
+  `payment_date` date NOT NULL,
+  `payment_total` double NOT NULL,
+  `bank_id` double NOT NULL,
+  `supplier_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=612 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tpurchase_payment_list` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_price` double NOT NULL,
+  `purchase_id` double NOT NULL,
+  `payment_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1543 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsales` (
+  `sales_id` double NOT NULL AUTO_INCREMENT,
+  `sales_date` date DEFAULT NULL,
+  `sales_invoice` varchar(255) NOT NULL,
+  `sales_tax` varchar(255) NOT NULL,
+  `sales_category` varchar(255) NOT NULL,
+  `sales_total` double NOT NULL,
+  `sales_payment` double NOT NULL,
+  `sales_rest` double NOT NULL,
+  `sales_note` text NOT NULL,
+  `sales_flag` double NOT NULL,
+  `sales_print` tinyint(1) NOT NULL,
+  `sales_retur` double NOT NULL,
+  `customer_id` double NOT NULL,
+  `customer_p` double NOT NULL,
+  `employee_id` double NOT NULL,
+  `is_old` tinyint(1) NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`sales_id`),
+  KEY `sales_date` (`sales_date`)
+) ENGINE=MyISAM AUTO_INCREMENT=72596 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsales_item` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_item` double NOT NULL,
+  `list_quantity_p` double NOT NULL,
+  `list_quantity` double NOT NULL,
+  `list_price` double NOT NULL,
+  `list_subtotal` double NOT NULL,
+  `supplier_id` double NOT NULL,
+  `sales_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=157689 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsales_payment` (
+  `payment_id` double NOT NULL AUTO_INCREMENT,
+  `payment_date` date NOT NULL,
+  `payment_invoice` varchar(255) NOT NULL,
+  `payment_price` double NOT NULL,
+  `payment_cut` double NOT NULL,
+  `payment_total` double NOT NULL,
+  `payment_rest` double NOT NULL,
+  `payment_method` varchar(255) NOT NULL,
+  `payment_acceptdate` date DEFAULT NULL,
+  `payment_from` varchar(255) NOT NULL,
+  `payment_number` varchar(255) NOT NULL,
+  `payment_note` text NOT NULL,
+  `bank_id` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11973 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsales_payment_list` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_price` double NOT NULL,
+  `sales_id` double NOT NULL,
+  `payment_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=81761 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsalesman` (
+  `salesman_id` double NOT NULL AUTO_INCREMENT,
+  `salesman_name` varchar(255) NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`salesman_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tsupplier` (
+  `supplier_id` double NOT NULL AUTO_INCREMENT,
+  `supplier_name` varchar(255) NOT NULL,
+  `supplier_address` varchar(255) NOT NULL,
+  `supplier_phone` varchar(255) NOT NULL,
+  `supplier_contact` varchar(255) NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`supplier_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=145 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ttransfer` (
+  `transfer_id` double NOT NULL AUTO_INCREMENT,
+  `transfer_date` date DEFAULT NULL,
+  `transfer_invoice` varchar(255) NOT NULL,
+  `transfer_destination` varchar(255) NOT NULL,
+  `transfer_note` text NOT NULL,
+  `transfer_flag` double NOT NULL,
+  `modifier_id` int(11) NOT NULL,
+  PRIMARY KEY (`transfer_id`),
+  KEY `sales_date` (`transfer_date`)
+) ENGINE=MyISAM AUTO_INCREMENT=874 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ttransfer_item` (
+  `list_id` double NOT NULL AUTO_INCREMENT,
+  `list_item` double NOT NULL,
+  `list_quantity` double NOT NULL,
+  `transfer_id` double NOT NULL,
+  PRIMARY KEY (`list_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6568 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user_role` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USER_ID` int(11) DEFAULT NULL,
+  `ROLE_ID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `FK01` (`USER_ID`),
+  KEY `FK02` (`ROLE_ID`),
+  CONSTRAINT `FK01` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`USER_ID`),
+  CONSTRAINT `FK02` FOREIGN KEY (`ROLE_ID`) REFERENCES `roles` (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `users` (
   `USER_ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_NAME` varchar(50) NOT NULL,
@@ -11,45 +329,4 @@ CREATE TABLE `users` (
   `EMPLOYEE_PHONE` varchar(20) DEFAULT NULL,
   `GROUP_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`USER_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
-CREATE TABLE `user_role` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `USER_ID` int(11) DEFAULT NULL,
-  `ROLE_ID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `FK01` (`USER_ID`),
-  KEY `FK02` (`ROLE_ID`),
-  CONSTRAINT `FK01` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`USER_ID`),
-  CONSTRAINT `FK02` FOREIGN KEY (`ROLE_ID`) REFERENCES `roles` (`ROLE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
-CREATE TABLE `roles` (
-  `ROLE_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `ROLE_NAME` varchar(20) NOT NULL,
-  PRIMARY KEY (`ROLE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
-
--- INITAL DATA --
-insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (1,'arga','c28147ca62523c7582790a7d64ee311c',1,'2013-09-19 14:03:57','INIT','ARGA HASRIL','BEKASI','0817113289',1);
-insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (2,'rein','84aad32ab0ca8406f8ba4bd30e8be2e0',1,'2013-09-19 14:03:57','INIT','REIN MARTHA','BANDUNG','0817113289',1);
-insert into `users`(`USER_ID`,`USER_NAME`,`PASSWORD`,`ENABLED`,`CREATED_DATE`,`CREATED_BY`,`EMPLOYEE_NAME`,`EMPLOYEE_ADDRESS`,`EMPLOYEE_PHONE`,`GROUP_ID`) values (3,'gian','56ea9c664e8c9f1ad611cf8e5f1bb41c',1,'2013-09-19 14:03:57','INIT','GIAN DASUKI','BANDUNG','0817113289',1);
-
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (1,1,1);
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (3,1,2);
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (2,2,1);
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (4,2,2);
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (5,3,1);
-insert into `user_role`(`ID`,`USER_ID`,`ROLE_ID`) values (5,3,2);
-
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (1,'ROLE_ADMIN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (2,'ROLE_MASTER');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (3,'ROLE_PEMBELIAN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (4,'ROLE_PENJUALAN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (5,'ROLE_TRANSFER');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (6,'ROLE_PEMBAYARAN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (7,'ROLE_RETUR');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (8,'ROLE_PENAGIHAN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (9,'ROLE_LAPORAN');
-insert into `roles`(`ROLE_ID`,`ROLE_NAME`) values (10,'ROLE_OPERASIONAL');
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
