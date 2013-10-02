@@ -29,7 +29,7 @@ public class User extends BaseObject{
 	
 	private String username;
 	private String password;
-	private Integer userId;
+	private int userId;
 	private boolean enabled;
 	private Date createdDate;
 	private String createdBy;
@@ -39,7 +39,6 @@ public class User extends BaseObject{
 	private String empName;
 	private String empAddress;
 	private String empPhone;
-	private EmployeeGroup empGroup;
 	
 	
 	
@@ -54,10 +53,10 @@ public class User extends BaseObject{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "USER_ID")
-	public Integer getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
@@ -128,16 +127,7 @@ public class User extends BaseObject{
 		this.empPhone = empPhone;
 	}
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "GROUP_ID", nullable = false)
-	public EmployeeGroup getEmpGroup() {
-		return empGroup;
-	}
-	public void setEmpGroup(EmployeeGroup empGroup) {
-		this.empGroup = empGroup;
-	}
-	
-	
+			
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -148,19 +138,19 @@ public class User extends BaseObject{
 				+ ((createdDate == null) ? 0 : createdDate.hashCode());
 		result = prime * result
 				+ ((empAddress == null) ? 0 : empAddress.hashCode());
-		result = prime * result
-				+ ((empGroup == null) ? 0 : empGroup.hashCode());
+		
 		result = prime * result + ((empName == null) ? 0 : empName.hashCode());
 		result = prime * result
 				+ ((empPhone == null) ? 0 : empPhone.hashCode());
 		result = prime * result + (enabled ? 1231 : 1237);
 		result = prime * result
 				+ ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + userId;
 		result = prime * result
 				+ ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -185,11 +175,7 @@ public class User extends BaseObject{
 				return false;
 		} else if (!empAddress.equals(other.empAddress))
 			return false;
-		if (empGroup == null) {
-			if (other.empGroup != null)
-				return false;
-		} else if (!empGroup.equals(other.empGroup))
-			return false;
+		
 		if (empName == null) {
 			if (other.empName != null)
 				return false;
@@ -207,15 +193,7 @@ public class User extends BaseObject{
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (roles == null) {
-			if (other.roles != null)
-				return false;
-		} else if (!roles.equals(other.roles))
-			return false;
-		if (userId == null) {
-			if (other.userId != null)
-				return false;
-		} else if (!userId.equals(other.userId))
+		if (userId != other.userId)
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -246,7 +224,6 @@ public class User extends BaseObject{
 		builder.append(", empPhone=");
 		builder.append(empPhone);
 		builder.append(", empGroup=");
-		builder.append(empGroup);
 		builder.append("]");
 		return builder.toString();
 	}

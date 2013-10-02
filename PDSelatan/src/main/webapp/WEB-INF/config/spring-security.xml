@@ -9,7 +9,15 @@
 		<intercept-url pattern="/finance/admin" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/finance/common" access="hasRole('ROLE_USER')" />
 
-		<openid-login login-page="/login"
+			<form-login login-page="/login"
+			authentication-failure-url="/login?error=true"
+			default-target-url="/" />
+
+		<logout invalidate-session="true" logout-success-url="/login"
+			logout-url="/logout" />
+	</http>
+
+		<!-- <openid-login login-page="/login"
 			authentication-failure-url="/login?error=true"
 			default-target-url="/finance/common">
 			<attribute-exchange identifier-match="https://www.google.com/.*">
@@ -17,11 +25,11 @@
 	        <openid-attribute name="firstname" type="http://axschema.org/namePerson/first" required="true" />
 	        <openid-attribute name="lastname" type="http://axschema.org/namePerson/last" required="true" />
      		</attribute-exchange>
-		</openid-login>
+		</openid-login> -->
 
-		<logout invalidate-session="true" logout-success-url="/login"
+		<!-- <logout invalidate-session="true" logout-success-url="/login"
 			logout-url="/logout" />
-	</http>
+	</http> -->
 
 <!-- 	<beans:bean id="userDetailsService" class="com.brightrich.service.impl.UserDetailsServiceImpl" />
  -->	<beans:bean id="daoAuthenticationProvider"

@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pdselatan.model.Role;
+import com.pdselatan.model.UserRole;
 
 @Service("assembler")
 public class Assembler {
@@ -21,8 +21,8 @@ public class Assembler {
 		String username = usr.getUsername();
 
 		// Password will be managed by OpenID so leave it blank
-		String password = "";
-
+		String password = usr.getPassword();
+		
 		boolean enabled = usr.isEnabled();
 		boolean accountNonExpired = usr.isEnabled();
 		boolean credentialsNonExpired = usr.isEnabled();
@@ -30,10 +30,10 @@ public class Assembler {
 
 		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 
-		for (Role role : usr.getRoles()) {
-			System.out.println("adding role = " + role.getAuthority()
+		for (UserRole role : usr.getRoles()) {
+			System.out.println("adding role = " + role.getRoleId().getRoleName()
 					+ " to user = " + usr.getUsername());
-			authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
+			authorities.add(new SimpleGrantedAuthority(role.getRoleId().getRoleName()));
 		}
 
 		// authorities.add(new SimpleGrantedAuthority("ROLE_"+usr.getRole()));
@@ -44,26 +44,5 @@ public class Assembler {
 		return user;
 	}
 
-	public String encryptPassNow(String password) {
-		byte[] plainText = password.getBytes();
-		MessageDigest md = null;
-		try {
-			md = MessageDigest.getInstance("MD5");
-		} catch (Exception e) {
-			System.err.println(e.toString());
-		}
-		md.reset();
-		md.update(plainText);
-		byte[] encodedPassword = md.digest();
-
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < encodedPassword.length; i++) {
-			if ((encodedPassword[i] & 0xff) < 0x10) {
-				sb.append("0");
-			}
-			sb.append(Long.toString(encodedPassword[i] & 0xff, 16));
-		}
-		return sb.toString();
-	}
-
+	
 }

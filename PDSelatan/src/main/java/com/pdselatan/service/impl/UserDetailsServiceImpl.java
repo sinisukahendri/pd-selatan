@@ -29,7 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService, Authenticatio
 
 	System.out.println("searching for user : " + username);  
     
-    List<User> userList = userDao.findUsersbyName(username, MatchMode.EXACT);            
+    List<User> userList = userDao.findUsersbyName("username", username, MatchMode.EXACT);            
     
     
     if (userList.size() < 1)

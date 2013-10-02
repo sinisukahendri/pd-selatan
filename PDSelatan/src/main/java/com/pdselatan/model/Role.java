@@ -18,6 +18,7 @@ public class Role extends BaseObject {
 	
 	private int roleId;
 	private String roleName;
+	private String roleDesc;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -36,6 +37,18 @@ public class Role extends BaseObject {
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
+	
+	
+	@Column(name = "ROLE_DESC")	
+	public String getRoleDesc() {
+		return roleDesc;
+	}
+	
+	public void setRoleDesc(String roleDesc) {
+		this.roleDesc = roleDesc;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

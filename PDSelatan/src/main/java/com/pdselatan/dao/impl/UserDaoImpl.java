@@ -10,7 +10,7 @@ import com.pdselatan.dao.UserDao;
 import com.pdselatan.model.User;
 
 @Repository
-public class UserDaoImpl extends AbstractDaoImpl<User, String> implements UserDao {
+public class UserDaoImpl extends AbstractDaoImpl<User, Integer> implements UserDao {
 
     protected UserDaoImpl() {
         super(User.class);
@@ -20,12 +20,13 @@ public class UserDaoImpl extends AbstractDaoImpl<User, String> implements UserDa
         saveOrUpdate(user);
     }
 
-    public List<User> findUsersbyName(String userName, MatchMode mode) {    	
-        return findByCriteria(Restrictions.like("username", userName, mode));
-    }        
+    public List<User> findUsersbyName(String criteria, String value, MatchMode mode) {    	
+        return findByCriteria(Restrictions.like(criteria, value, mode));
+    }
+    
     
     public User findUserById(String userId) {
-        return findById(userId);
+        return findById(Integer.parseInt(userId));
     }
 	
 }
