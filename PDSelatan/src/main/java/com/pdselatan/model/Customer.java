@@ -19,7 +19,7 @@ public class Customer extends BaseObject {
 	 */
 	private static final long serialVersionUID = 9220069096029194468L;
 	
-	private Double customerId;
+	private Integer customerId;
 	private String customerName;
 	private String customerCategory;
 	private String customerAddress1;
@@ -34,10 +34,10 @@ public class Customer extends BaseObject {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "customer_id")
-	public Double getCustomerId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Double customerId) {
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 	

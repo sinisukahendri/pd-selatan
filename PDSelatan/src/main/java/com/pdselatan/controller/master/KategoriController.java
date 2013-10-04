@@ -52,7 +52,7 @@ public class KategoriController {
 
 		Kategori deletedKategori = new Kategori();
 		if (form.getDeletedKategori() != null) {
-			deletedKategori.setKategoriId(Double.parseDouble(form
+			deletedKategori.setKategoriId(Integer.parseInt(form
 					.getDeletedKategori()));
 			// bankService.deleteBank(deletedBank);
 			logger.error("Kategori Deleted id:"

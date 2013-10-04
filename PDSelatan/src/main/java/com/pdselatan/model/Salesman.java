@@ -17,17 +17,17 @@ public class Salesman extends BaseObject {
 	 * 
 	 */
 	private static final long serialVersionUID = -2244798948087820146L;
-	private Double salesmanId;
+	private Integer salesmanId;
 	private String salesmanName;
 	private User modifier;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "salesman_id")
-	public Double getSalesmanId() {
+	public Integer getSalesmanId() {
 		return salesmanId;
 	}
-	public void setSalesmanId(Double salesmanId) {
+	public void setSalesmanId(Integer salesmanId) {
 		this.salesmanId = salesmanId;
 	}
 

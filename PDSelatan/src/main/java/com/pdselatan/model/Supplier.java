@@ -18,7 +18,7 @@ public class Supplier extends BaseObject{
 	 * 
 	 */
 	private static final long serialVersionUID = -6246214368988912532L;
-	private Double supplierId;
+	private Integer supplierId;
 	private String supplierName;
 	private String supplierAddress;
 	private String supplierPhone;
@@ -28,10 +28,10 @@ public class Supplier extends BaseObject{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "supplier_id")
-	public Double getSupplierId() {
+	public Integer getSupplierId() {
 		return supplierId;
 	}
-	public void setSupplierId(Double supplierId) {
+	public void setSupplierId(Integer supplierId) {
 		this.supplierId = supplierId;
 	}
 	
