@@ -49,7 +49,7 @@ public class CustomerController {
 	public ModelAndView deleteCustomer(ModelAndView mav, CustomerAttribute form){
 		Customer deletedCustomer = new Customer();
 		if(form.getDeletedCustomer()!=null){
-			deletedCustomer.setCustomerId(Double.parseDouble(form.getDeletedCustomer()));
+			deletedCustomer.setCustomerId(Integer.parseInt(form.getDeletedCustomer()));
 //			customerService.deleteCustomer(deletedCustomer);
 			logger.error("Customer deleted, id"+deletedCustomer.getCustomerId());
 		}

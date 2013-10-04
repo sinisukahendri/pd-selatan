@@ -53,7 +53,7 @@ public class SupplierController {
 	public ModelAndView deleteSupplier(ModelAndView mav,SupplierAttribute form){
 		Supplier deletedSupplier = new Supplier();
 		if(form.getDeletedSupplier()!=null){
-			deletedSupplier.setSupplierId(Double.parseDouble(form.getDeletedSupplier()));
+			deletedSupplier.setSupplierId(Integer.parseInt(form.getDeletedSupplier()));
 //			supplierService.deleteSupplier(deletedSupplier);
 			logger.error("Spuulier Deleted id:"+deletedSupplier.getSupplierId());
 		}

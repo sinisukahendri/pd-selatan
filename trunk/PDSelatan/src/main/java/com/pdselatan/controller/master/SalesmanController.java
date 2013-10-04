@@ -52,7 +52,7 @@ public class SalesmanController {
 	public ModelAndView deleteSales(ModelAndView mav,SalesmanAttribute form){
 		Salesman deletedSalesman = new Salesman();
 		if(form.getDeletedSalesman()!=null){
-			deletedSalesman.setSalesmanId(Double.parseDouble(form.getDeletedSalesman()));
+			deletedSalesman.setSalesmanId(Integer.parseInt(form.getDeletedSalesman()));
 //			salesmanService.deleteSalesman(deletedSalesman);
 			logger.error("Bank Deleted id:"+deletedSalesman.getSalesmanId());
 		}
