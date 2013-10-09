@@ -31,7 +31,7 @@ import com.pdselatan.service.UserService;
 @RequestMapping(value= "/master")
 public class PegawaiController {
 
-	protected static Logger logger = Logger.getLogger(MasterController.class);
+	protected static Logger logger = Logger.getLogger(BarangController.class);
 	private static final String PEGAWAI = "master.pegawai";
 	private static final String TAMBAH_PEGAWAI = "master.tambah-pegawai";
 	private static final String ACTION = "action";
